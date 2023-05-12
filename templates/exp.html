@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Experiments</title>
+        <link rel="icon" type="image/x-icon" href="{{url_for('static',filename='assets/favicon.ico')}}" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="{{ url_for('home')}}">Emotion Detection</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('home')}}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('result')}}">Result</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('ml')}}">Machine Learning</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('exp')}}">Experiments</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style = background-image:url({{ url_for('static', filename='contact-bg.jpg')}})>
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Experiments</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                            <h2>Experiment 1</h2>
+			    <h4>Dataset : Secret Recipe</h4>
+			    <h4>Description : </h4>
+                        <p class="post-meta">
+                            This experiment is conducted with the dataset contains around 3000 data. The data are all text data and they're all about the review on the restaurant named Secret Recipe. The dataset used here had gone through the data cleaning process to ensure the dataset is clean to be train. Once the dataset is cleaned, the emotion extraction function will occur to get the emotions from the dataset. The emotions would be features of the training process, meanwhile the GMM method would be used to get the label of the experiment from the emotion. After that, both features and labels would be train to fit into different models.
+                        </p>
+                    </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Post preview-->
+                    <div class="post-preview">
+				<h2>Experiment 2 and 2.1</h2>
+				<h4>Dataset : Secret Recipe</h4>
+				<h4>Description : </h4>
+                        <p class="post-meta">This experiment was conducted with the same dataset in experiment 1. In experiment 2, the whole process will be the same as experiment 1 but there is an extra step. This extra step is about removing the restaurant name in the dataset since the restaurant name will affect the accuracy of the models. In experiment 2.1, the texts those do not provide emotion value would be remove to make sure the model can provide more accurate results.</p>
+                    </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                            <h2>Experiment 3</h2>
+			    <h4>Dataset : Secret Recipe</h4>
+			    <h4>Description : </h4>
+                        <p class="post-meta">This experiment did what experiment 2.1 did. But the data in the dataset would be translated into English language. Since the dataset contains texts from multiple languages or even mixed languages in a sentence, the data had to be translated into a specific language to ensure the the emotion extraction function did not missed any important data that could affect the value of the emotions.</p>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                            <h2>Experiment 4</h2>
+				<h4>Dataset : Spritzer</h4>
+				<h4>Description : </h4>
+                        <p class="post-meta">This experiment had the same process in experiment 3, the only difference between this experiment and experiment 3 was the dataset used in both experiments.</p>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Tunku Abdul Rahman 2021</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script type = "text/javascript" src = "{{ url_for('static', filename='js/scripts.js') }}" ></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
